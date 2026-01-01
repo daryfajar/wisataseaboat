@@ -31,17 +31,12 @@ body {
 
 /* Header */
 header {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: white;
   padding: 1rem 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  /* Sticky removed */
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease;
 }
 
 .brand-title {
@@ -112,6 +107,39 @@ header h1 {
     /* Keep horizontal on PC too */
     align-items: center;
   }
+}
+
+/* Sticky Language Bar */
+.lang-toggle-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  /* Above everything */
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.lang-btn {
+  background: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.lang-btn:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Container */
