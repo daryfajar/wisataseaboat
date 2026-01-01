@@ -11,10 +11,26 @@
 <body>
 
     <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Travel Agency Logo">
+        <h2 class="brand-title">Sea Boat Mentawai Tour</h2>
+        <div class="header-top">
+            <div class="logo-container">
+                <img src="logo.png" alt="Travel Agency Logo">
+            </div>
+
+            <!-- Contact Buttons -->
+            <div class="contact-buttons">
+                <a href="https://wa.me/6282258970690" class="contact-btn btn-wa">
+                    WhatsApp
+                </a>
+                <a href="https://www.instagram.com/seaboat.mentawaitour/" class="contact-btn btn-ig" target="_blank">
+                    Instagram
+                </a>
+            </div>
         </div>
+
         <h1>No 1 Tour Agency for Sipora</h1>
+        </a>
+        </div>
 
         <div class="lang-toggle">
             <button id="langSwitch" class="lang-btn">Switch to Bahasa Indonesia</button>
@@ -51,8 +67,11 @@
             <!-- Hopping Island -->
             <div class="card">
                 <div class="card-image-wrapper">
-                    <img src="island_hopping.png" alt="Island Hopping">
-                    <div class="card-overlay"></div>
+                    <div class="card-slideshow">
+                        <img src="island_hopping.png" alt="Island Hopping 1" class="active">
+                        <img src="island_hopping_2.png" alt="Island Hopping 2">
+                        <img src="island_hopping.png" alt="Island Hopping 3">
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3 class="lang-en">Hopping Island Sipora</h3>
@@ -65,8 +84,11 @@
             <!-- Diving -->
             <div class="card">
                 <div class="card-image-wrapper">
-                    <img src="diving.png" alt="Diving Trip">
-                    <div class="card-overlay"></div>
+                    <div class="card-slideshow">
+                        <img src="diving.png" alt="Diving Trip 1" class="active">
+                        <img src="diving_2.png" alt="Diving Trip 2">
+                        <img src="diving.png" alt="Diving Trip 3">
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3 class="lang-en">Diving Trip</h3>
@@ -79,8 +101,11 @@
             <!-- Surfing -->
             <div class="card">
                 <div class="card-image-wrapper">
-                    <img src="surfing.png" alt="Surfing Trip">
-                    <div class="card-overlay"></div>
+                    <div class="card-slideshow">
+                        <img src="surfing.png" alt="Surfing Trip 1" class="active">
+                        <img src="surfing.png" alt="Surfing Trip 2">
+                        <img src="surfing.png" alt="Surfing Trip 3">
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3 class="lang-en">Surfing Trip</h3>
@@ -93,8 +118,11 @@
             <!-- Fishing -->
             <div class="card">
                 <div class="card-image-wrapper">
-                    <img src="fishing.png" alt="Fishing Trip">
-                    <div class="card-overlay"></div>
+                    <div class="card-slideshow">
+                        <img src="fishing.png" alt="Fishing Trip 1" class="active">
+                        <img src="fishing.png" alt="Fishing Trip 2">
+                        <img src="fishing.png" alt="Fishing Trip 3">
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3 class="lang-en">Fishing Trip</h3>
@@ -107,8 +135,11 @@
             <!-- Boat Charter -->
             <div class="card">
                 <div class="card-image-wrapper">
-                    <img src="boat_charter.png" alt="Boat Charter">
-                    <div class="card-overlay"></div>
+                    <div class="card-slideshow">
+                        <img src="boat_charter.png" alt="Boat Charter 1" class="active">
+                        <img src="boat_charter.png" alt="Boat Charter 2">
+                        <img src="boat_charter.png" alt="Boat Charter 3">
+                    </div>
                 </div>
                 <div class="card-info">
                     <h3 class="lang-en">Boat Charter</h3>
@@ -131,27 +162,43 @@
         <h4>No 1 Tour Agency for Sipora</h4>
         <p class="lang-en">Ready to explore?</p>
         <p class="lang-id hidden">Siap menjelajah?</p>
-        <p style="margin-top: 1rem">&copy; 2024 Sipora Tour Agency. All Rights Reserved.</p>
+        <p style="margin-top: 1rem">&copy; 2026 Sipora Tour Agency. All Rights Reserved.</p>
     </footer>
 
     <script>
+        // Language Toggle
         const langSwitch = document.getElementById('langSwitch');
         let currentLang = 'en';
 
         langSwitch.addEventListener('click', () => {
             if (currentLang === 'en') {
-                // Switch to ID
                 document.querySelectorAll('.lang-en').forEach(el => el.classList.add('hidden'));
                 document.querySelectorAll('.lang-id').forEach(el => el.classList.remove('hidden'));
                 langSwitch.textContent = 'Switch to English';
                 currentLang = 'id';
             } else {
-                // Switch to EN
                 document.querySelectorAll('.lang-id').forEach(el => el.classList.add('hidden'));
                 document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('hidden'));
                 langSwitch.textContent = 'Switch to Bahasa Indonesia';
                 currentLang = 'en';
             }
+        });
+
+        // Auto Slideshow Script
+        document.querySelectorAll('.card-slideshow').forEach(slideshow => {
+            const images = slideshow.querySelectorAll('img');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                // Remove active from current
+                images[currentIndex].classList.remove('active');
+
+                // Move to next
+                currentIndex = (currentIndex + 1) % images.length;
+
+                // Add active to next
+                images[currentIndex].classList.add('active');
+            }, 3000); // Change every 3 seconds
         });
     </script>
 </body>
