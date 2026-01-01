@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No 1 Tour Agency for Sipora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Travel Agency Logo">
+        </div>
+        <h1>No 1 Tour Agency for Sipora</h1>
+
+        <div class="lang-toggle">
+            <button id="langSwitch" class="lang-btn">Switch to Bahasa Indonesia</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="hero-text">
+            <p class="lead lang-en">We provide the best experiences in Mentawai</p>
+            <p class="lead lang-id hidden">Kami menyediakan pengalaman terbaik di Mentawai</p>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="video-frame">
+                <div class="video-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="video.mp4" type="video/mp4">
+                        <span class="lang-en">Your browser does not support the video tag.</span>
+                        <span class="lang-id hidden">Browser Anda tidak mendukung tag video.</span>
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-title">
+            <h2 class="lang-en">Our Services</h2>
+            <h2 class="lang-id hidden">Layanan Kami</h2>
+            <span></span>
+        </div>
+
+        <section class="gallery">
+            <!-- Hopping Island -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="island_hopping.png" alt="Island Hopping">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="lang-en">Hopping Island Sipora</h3>
+                    <h3 class="lang-id hidden">Hopping Island Sipora</h3>
+                    <p class="lang-en">Explore Hidden Gems in Paradise</p>
+                    <p class="lang-id hidden">Jelajahi Surga Tersembunyi di Sipora</p>
+                </div>
+            </div>
+
+            <!-- Diving -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="diving.png" alt="Diving Trip">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="lang-en">Diving Trip</h3>
+                    <h3 class="lang-id hidden">Wisata Menyelam</h3>
+                    <p class="lang-en">Discover the Underwater Magic</p>
+                    <p class="lang-id hidden">Temukan Keajaiban Bawah Laut</p>
+                </div>
+            </div>
+
+            <!-- Surfing -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="surfing.png" alt="Surfing Trip">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="lang-en">Surfing Trip</h3>
+                    <h3 class="lang-id hidden">Wisata Selancar</h3>
+                    <p class="lang-en">Ride the World-Class Waves</p>
+                    <p class="lang-id hidden">Taklukkan Ombak Kelas Dunia</p>
+                </div>
+            </div>
+
+            <!-- Fishing -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="fishing.png" alt="Fishing Trip">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="lang-en">Fishing Trip</h3>
+                    <h3 class="lang-id hidden">Wisata Memancing</h3>
+                    <p class="lang-en">The Ultimate Fishing Adventure</p>
+                    <p class="lang-id hidden">Petualangan Memancing Terbaik</p>
+                </div>
+            </div>
+
+            <!-- Boat Charter -->
+            <div class="card">
+                <div class="card-image-wrapper">
+                    <img src="boat_charter.png" alt="Boat Charter">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-info">
+                    <h3 class="lang-en">Boat Charter</h3>
+                    <h3 class="lang-id hidden">Sewa Kapal Cepat</h3>
+                    <p class="lang-en">Fast & Comfortable Sea Travel</p>
+                    <p class="lang-id hidden">Perjalanan Laut Cepat & Nyaman</p>
+                    <p class="lang-en"
+                        style="margin-top:0.5rem; font-size: 0.8rem; color:var(--primary-color); font-weight:700;">
+                        Mentawai - Padang</p>
+                    <p class="lang-id hidden"
+                        style="margin-top:0.5rem; font-size: 0.8rem; color:var(--primary-color); font-weight:700;">
+                        Mentawai - Padang</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <h4>No 1 Tour Agency for Sipora</h4>
+        <p class="lang-en">Ready to explore?</p>
+        <p class="lang-id hidden">Siap menjelajah?</p>
+        <p style="margin-top: 1rem">&copy; 2024 Sipora Tour Agency. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const langSwitch = document.getElementById('langSwitch');
+        let currentLang = 'en';
+
+        langSwitch.addEventListener('click', () => {
+            if (currentLang === 'en') {
+                // Switch to ID
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.lang-id').forEach(el => el.classList.remove('hidden'));
+                langSwitch.textContent = 'Switch to English';
+                currentLang = 'id';
+            } else {
+                // Switch to EN
+                document.querySelectorAll('.lang-id').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.remove('hidden'));
+                langSwitch.textContent = 'Switch to Bahasa Indonesia';
+                currentLang = 'en';
+            }
+        });
+    </script>
+</body>
+
+</html>
